@@ -52,8 +52,8 @@ class UserProfile(models.Model):
 
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-    height = models.DecimalField(max_digits=5, decimal_places=2)
-    weight = models.DecimalField(max_digits=5, decimal_places=2)
+    height = models.FloatField(null=True, blank=True)
+    weight = models.FloatField(null=True, blank=True)
     activity_level = models.CharField(max_length=20, choices=LEVEL_CHOICES)
     goal = models.CharField(max_length=20, choices=GOAL_CHOICES)
 

@@ -3,7 +3,7 @@ from userprofile.models import User
 
 
 class HealthMetrics(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='health_metrics')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='health_metrics')
     date = models.DateField()
     weight = models.DecimalField(max_digits=5, decimal_places=2)
     body_fat_percentage = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
