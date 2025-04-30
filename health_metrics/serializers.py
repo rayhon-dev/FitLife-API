@@ -5,12 +5,5 @@ from .models import HealthMetrics
 class HealthMetricsSerializer(serializers.ModelSerializer):
     class Meta:
         model = HealthMetrics
-        fields = [
-            'id',
-            'date',
-            'weight',
-            'body_fat_percentage',
-            'blood_pressure_systolic',
-            'blood_pressure_diastolic',
-            'heart_rate'
-        ]
+        fields = '__all__'
+        read_only_fields = ['user']

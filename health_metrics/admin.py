@@ -7,4 +7,9 @@ class HealthMetricsAdmin(admin.ModelAdmin):
     list_filter = ('date', 'user')
     ordering = ('-date',)
 
+    def save_model(self, request, obj, form, change):
+        if not obj.user:
+            obj.user = request.user
+        obj.save()
+
 
